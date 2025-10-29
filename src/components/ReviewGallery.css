@@ -1,0 +1,279 @@
+.review-gallery-container {
+  max-width: 100%;
+  height: 100%;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  color: #444444;
+}
+
+.empty-state h3 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  color: #888888;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #222222;
+}
+
+.review-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: #ffffff;
+  color: #000000;
+}
+
+.nav-button:disabled {
+  border-color: #333333;
+  color: #333333;
+  cursor: not-allowed;
+}
+
+.nav-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.gallery-counter {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0 1rem;
+  border-left: 1px solid #333333;
+  border-right: 1px solid #333333;
+}
+
+.review-filename {
+  font-size: 1.125rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: #0a0a0a;
+  border: 1px solid #222222;
+  font-family: 'Courier New', monospace;
+}
+
+.review-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  height: calc(100vh - 400px);
+  min-height: 600px;
+}
+
+.review-panel {
+  display: flex;
+  flex-direction: column;
+  background: #0a0a0a;
+  border: 1px solid #222222;
+  overflow: hidden;
+}
+
+.review-panel h3 {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0;
+  padding: 1rem;
+  border-bottom: 1px solid #222222;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.image-container {
+  position: relative;
+  flex: 1;
+  overflow: auto;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-image {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.bbox-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.bbox-info {
+  padding: 0.75rem 1rem;
+  background: #0a0a0a;
+  border-top: 1px solid #222222;
+  color: #888888;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.pdf-container {
+  flex: 1;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #888888;
+}
+
+/* Thumbnail Gallery */
+.thumbnail-gallery {
+  background: #0a0a0a;
+  border: 1px solid #222222;
+  padding: 1rem;
+}
+
+.thumbnail-gallery h4 {
+  font-size: 0.875rem;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.thumbnail-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: 1px solid #333333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.thumbnail-item:hover {
+  background: #1a1a1a;
+  border-color: #666666;
+}
+
+.thumbnail-item.active {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.thumbnail-number {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  min-width: 24px;
+  text-align: center;
+}
+
+.thumbnail-item.active .thumbnail-number {
+  color: #000000;
+}
+
+.thumbnail-name {
+  font-size: 0.875rem;
+  color: #888888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Courier New', monospace;
+}
+
+.thumbnail-item.active .thumbnail-name {
+  color: #000000;
+}
+
+@media (max-width: 1200px) {
+  .review-content {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 500px;
+  }
+
+  .review-panel {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .gallery-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .thumbnail-item {
+    min-width: 150px;
+  }
+}

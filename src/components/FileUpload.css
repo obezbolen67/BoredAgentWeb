@@ -1,0 +1,242 @@
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.upload-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #222222;
+}
+
+.upload-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.upload-header p {
+  font-size: 1rem;
+  color: #888888;
+  margin: 0;
+}
+
+.batch-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #0a0a0a;
+  border: 1px solid #222222;
+}
+
+.batch-control label {
+  font-size: 0.875rem;
+  color: #888888;
+  font-weight: 500;
+}
+
+.batch-control input[type="number"] {
+  width: 60px;
+  padding: 0.5rem;
+  background: #000000;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.batch-control input[type="number"]:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+.batch-control input[type="number"]:disabled {
+  border-color: #333333;
+  color: #333333;
+}
+
+.batch-label {
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Dropzone */
+.dropzone {
+  border: 2px dashed #333333;
+  border-radius: 0;
+  padding: 4rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropzone::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #1a1a1a;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.dropzone:hover::before {
+  opacity: 1;
+}
+
+.dropzone:hover {
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.dropzone.active {
+  border-color: #ffffff;
+  background: #1a1a1a;
+}
+
+.dropzone.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.dropzone-content {
+  position: relative;
+  z-index: 1;
+}
+
+.upload-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  color: #ffffff;
+  filter: none;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.dropzone-content h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.dropzone-content p {
+  font-size: 1.125rem;
+  color: #888888;
+  margin-bottom: 1.5rem;
+}
+
+.file-types {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.file-type-badge {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 0;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Info Cards */
+.upload-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #0a0a0a;
+  border: 1px solid #222222;
+  border-radius: 0;
+  transition: all 0.2s ease;
+}
+
+.info-card:hover {
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.info-icon {
+  width: 32px;
+  height: 32px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.info-card h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  font-size: 0.875rem;
+  color: #888888;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .upload-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .upload-header p {
+    font-size: 1rem;
+  }
+
+  .dropzone {
+    padding: 3rem 1.5rem;
+  }
+
+  .upload-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .dropzone-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .dropzone-content p {
+    font-size: 1rem;
+  }
+
+  .upload-info {
+    grid-template-columns: 1fr;
+  }
+}

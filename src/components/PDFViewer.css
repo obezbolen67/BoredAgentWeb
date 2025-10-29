@@ -1,0 +1,155 @@
+.pdf-viewer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.pdf-viewer-container {
+  background: #0a0a0a;
+  border: 2px solid #ffffff;
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(255, 255, 255, 0.15);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pdf-viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 2px solid #ffffff;
+}
+
+.pdf-viewer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.pdf-viewer-close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.pdf-viewer-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.pdf-viewer-close:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.pdf-viewer-content {
+  flex: 1;
+  padding: 1rem;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.pdf-viewer-frame {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #333333;
+  background: #ffffff;
+}
+
+.pdf-viewer-footer {
+  padding: 1.5rem;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.pdf-viewer-download {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  color: #000000;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.pdf-viewer-download svg {
+  width: 20px;
+  height: 20px;
+}
+
+.pdf-viewer-download:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .pdf-viewer-container {
+    width: 95%;
+    height: 95vh;
+  }
+
+  .pdf-viewer-header,
+  .pdf-viewer-footer {
+    padding: 1rem;
+  }
+
+  .pdf-viewer-title {
+    font-size: 1rem;
+  }
+
+  .pdf-viewer-content {
+    padding: 0.5rem;
+  }
+}
