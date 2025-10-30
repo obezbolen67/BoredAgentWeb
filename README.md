@@ -97,7 +97,3 @@ On Unix shells, use `REACT_APP_API_URL=https://yourdomain.com/api npm run build`
 
 - The UI stores a small bit of state in `localStorage` to survive refreshes
 - Large uploads may take time; progress bar reflects upload progress, not full processing
-
----
-
-Pairs with `../BoredAgentBackend`.
