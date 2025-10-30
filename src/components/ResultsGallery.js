@@ -61,7 +61,7 @@ function ResultsGallery({ results, onRefresh }) {
 
   const handleDownloadAll = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/download-all', {
+      const response = await fetch(api.getDownloadAllUrl(), {
         method: 'GET',
       });
       

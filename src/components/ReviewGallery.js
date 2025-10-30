@@ -199,7 +199,7 @@ function ReviewGallery({ results }) {
               <>
                 <img
                   ref={imageRef}
-                  src={`http://localhost:5000/api/image/${currentResult.original_filename}`}
+                  src={api.getImageUrl(currentResult.original_filename)}
                   alt="Original"
                   className="review-image"
                   onLoad={drawBoundingBoxes}

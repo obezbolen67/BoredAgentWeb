@@ -1,6 +1,19 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+// Determine API base URL for different environments
+// Priority:
+// 1) REACT_APP_API_URL (explicit override at build time)
+// 2) Same-origin "/api" (works with CRA proxy in dev and with reverse proxy in prod)
+// 3) Fallback to "/api"
+const resolveBaseUrl = () => {
+  if (process.env.REACT_APP_API_URL) return process.env.REACT_APP_API_URL;
+  if (typeof window !== 'undefined' && window.location) {
+    return `${window.location.origin}/api`;
+  }
+  return '/api';
+};
+
+const API_BASE_URL = resolveBaseUrl();
 
 const api = {
   // Health check
@@ -51,6 +64,12 @@ const api = {
   downloadPDF: (stem) => {
     return `${API_BASE_URL}/pdf/${stem}`;
   },
+
+  // Get image URL
+  getImageUrl: (filename) => `${API_BASE_URL}/image/${filename}`,
+
+  // Get bulk download ZIP URL
+  getDownloadAllUrl: () => `${API_BASE_URL}/download-all`,
 
   // Clear all results
   clearResults: async () => {
